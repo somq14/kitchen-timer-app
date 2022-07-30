@@ -1,0 +1,4 @@
+# eslint の設定ファイル
+root: true
+extends:
+  - "@somq14/eslint-config/react"

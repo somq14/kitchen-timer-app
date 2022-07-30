@@ -1,0 +1,2 @@
+"*": prettier --ignore-path .gitignore --ignore-unknown
+"*.{js,jsx,ts,tsx}": eslint --ignore-path .gitignore --max-warnings 0

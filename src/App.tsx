@@ -1,8 +1,9 @@
 import { View } from "react-native";
 
-import { KitchenTimer } from "./KitchenTimer";
+import { KitchenTimer, useKitchenTimer } from "./KitchenTimer";
 
 export const App: React.FC = () => {
+  const kitchenTimer = useKitchenTimer();
   return (
     <View
       style={{
@@ -11,7 +12,7 @@ export const App: React.FC = () => {
         justifyContent: "center",
       }}
     >
-      <KitchenTimer displayTime={123} />
+      <KitchenTimer {...kitchenTimer} />
     </View>
   );
 };

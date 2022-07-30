@@ -1,0 +1,4 @@
+# prettier の設定ファイル
+# cf. https://prettier.io/docs/en/options.html
+
+trailingComma: all

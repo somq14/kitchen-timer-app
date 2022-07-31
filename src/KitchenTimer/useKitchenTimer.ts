@@ -1,8 +1,9 @@
 import { Reducer, useEffect, useReducer } from "react";
 
 import { KitchenTimerProps } from "./KitchenTimer";
+import { useSound } from "./useSound";
 
-export type KitchenTimerState = {
+type KitchenTimerState = {
   state: "init" | "count-down" | "beep";
   displayTime: number;
   endUnixTime: number;
@@ -20,7 +21,7 @@ const initialState: KitchenTimerState = {
   startStopPressed: false,
 };
 
-export type KitchenTimerAction =
+type KitchenTimerAction =
   | { type: "CLOCK" }
   | { type: "MIN_BUTTON/PRESS_IN" }
   | { type: "MIN_BUTTON/PRESS_OUT" }
@@ -127,24 +128,20 @@ export const useKitchenTimer = (): KitchenTimerProps => {
     };
   }, []);
 
+  const sound = useSound();
   useEffect(() => {
     if (state.state !== "beep") {
       return;
     }
-
-    const intervalId = window.setInterval(() => {
-      console.info("beep!");
-    }, 500);
-    return () => {
-      window.clearInterval(intervalId);
-    };
-  }, [state.state]);
+    return sound?.pipipipi();
+  }, [sound, state.state]);
 
   return {
     displayTime: Math.round(state.displayTime / 1000),
     minButton: {
       isPressed: state.minPressed,
       onPressIn: () => {
+        void sound?.pi();
         dispatch({ type: "MIN_BUTTON/PRESS_IN" });
       },
       onPressOut: () => {
@@ -154,6 +151,7 @@ export const useKitchenTimer = (): KitchenTimerProps => {
     secButton: {
       isPressed: state.secPressed,
       onPressIn: () => {
+        void sound?.pi();
         dispatch({ type: "SEC_BUTTON/PRESS_IN" });
       },
       onPressOut: () => {
@@ -163,6 +161,7 @@ export const useKitchenTimer = (): KitchenTimerProps => {
     startStopButton: {
       isPressed: state.startStopPressed,
       onPressIn: () => {
+        void sound?.pi();
         dispatch({ type: "START_STOP_BUTTON/PRESS_IN" });
       },
       onPressOut: () => {

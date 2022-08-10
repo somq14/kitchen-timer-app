@@ -9,4 +9,9 @@
   baseBranches: ["develop"],
   commitMessagePrefix: "⬆️ ",
   labels: ["dependency"],
+  packageRules: [
+    {
+      matchPackageNames: ["react-native", "@types/react-native"],
+    },
+  ],
 }

@@ -2,10 +2,11 @@
   extends: [
     "config:base",
     ":timezone(Asia/Tokyo)",
-    "schedule:weekends",
     ":prHourlyLimitNone",
     ":maintainLockFilesWeekly",
   ],
+  separateMinorPatch: true,
   baseBranches: ["develop"],
   commitMessagePrefix: "⬆️ ",
+  labels: ["dependency"],
 }

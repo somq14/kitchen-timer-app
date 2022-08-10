@@ -11,6 +11,7 @@
   labels: ["dependency"],
   packageRules: [
     {
+      groupName: "react-native",
       matchPackageNames: ["react-native", "@types/react-native"],
     },
   ],

@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.kitchentimerapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.github.somq14.kitchentimerapp">
 
   <uses-permission android:name="android.permission.INTERNET"/>
   <!-- OPTIONAL PERMISSIONS, REMOVE WHATEVER YOU DO NOT NEED -->

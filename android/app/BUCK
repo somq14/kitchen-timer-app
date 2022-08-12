@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.kitchentimerapp",
+    package = "com.github.somq14.kitchentimerapp",
 )
 
 android_resource(
     name = "res",
-    package = "com.kitchentimerapp",
+    package = "com.github.somq14.kitchentimerapp",
     res = "src/main/res",
 )
 

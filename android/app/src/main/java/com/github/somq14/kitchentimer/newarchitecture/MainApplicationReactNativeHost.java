@@ -1,4 +1,4 @@
-package com.github.somq14.kitchentimerapp.newarchitecture;
+package com.github.somq14.kitchentimer.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.github.somq14.kitchentimerapp.BuildConfig;
-import com.github.somq14.kitchentimerapp.newarchitecture.components.MainComponentsRegistry;
-import com.github.somq14.kitchentimerapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.github.somq14.kitchentimer.BuildConfig;
+import com.github.somq14.kitchentimer.newarchitecture.components.MainComponentsRegistry;
+import com.github.somq14.kitchentimer.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

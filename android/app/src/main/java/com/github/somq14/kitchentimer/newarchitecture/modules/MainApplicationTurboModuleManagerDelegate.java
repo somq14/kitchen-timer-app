@@ -1,4 +1,4 @@
-package com.github.somq14.kitchentimerapp.newarchitecture.modules;
+package com.github.somq14.kitchentimer.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

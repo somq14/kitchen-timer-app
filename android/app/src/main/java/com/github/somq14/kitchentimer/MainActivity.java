@@ -1,4 +1,4 @@
-package com.github.somq14.kitchentimerapp;
+package com.github.somq14.kitchentimer;
 
 import android.os.Build;
 import android.os.Bundle;

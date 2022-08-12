@@ -1,5 +1,10 @@
 import React from "react";
-import { Pressable, PressableProps, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import {
+  Gesture,
+  GestureDetector,
+  GestureHandlerRootView,
+} from "react-native-gesture-handler";
 
 import { mmToDp } from "./kitchen-timer-style";
 
@@ -7,39 +12,52 @@ export type KitchenTimerButtonProps = {
   label?: string;
   fontSize?: number;
   isPressed?: boolean;
-} & PressableProps;
+  onPressIn?: () => void;
+  onPressOut?: () => void;
+};
 
 export const KitchenTimerButton: React.FC<KitchenTimerButtonProps> = ({
   label,
   fontSize,
   isPressed,
-  ...pressableProps
+  onPressIn,
+  onPressOut,
 }) => {
+  const gesture = Gesture.Manual()
+    .onTouchesDown(() => {
+      onPressIn?.();
+    })
+    .onTouchesUp(() => {
+      onPressOut?.();
+    });
+
   return (
-    <Pressable {...pressableProps}>
-      <View
-        style={{
-          width: mmToDp(10),
-          height: mmToDp(10),
-          backgroundColor: "#FFFFFF",
-          borderRadius: 999999,
-          elevation: isPressed ? 1 : 8,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Text
+    <GestureHandlerRootView>
+      <GestureDetector gesture={gesture}>
+        <View
           style={{
-            fontWeight: "bold",
-            fontSize,
-            color: "#606060",
-            textAlign: "center",
+            width: mmToDp(10),
+            height: mmToDp(10),
+            backgroundColor: "#FFFFFF",
+            borderRadius: 999999,
+            elevation: isPressed ? 1 : 8,
+            alignItems: "center",
+            justifyContent: "center",
           }}
-          allowFontScaling={false}
         >
-          {label}
-        </Text>
-      </View>
-    </Pressable>
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize,
+              color: "#606060",
+              textAlign: "center",
+            }}
+            allowFontScaling={false}
+          >
+            {label}
+          </Text>
+        </View>
+      </GestureDetector>
+    </GestureHandlerRootView>
   );
 };

@@ -67,7 +67,7 @@ const reducer = (
       return { ...prev, minPressed: false };
     }
     case "SEC_BUTTON/PRESS_IN": {
-      const isReset = prev.secPressed;
+      const isReset = prev.minPressed;
       return {
         ...prev,
         state: "init",

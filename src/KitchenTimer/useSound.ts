@@ -20,8 +20,10 @@ export const useSound = (): Sound | undefined => {
 
   useEffect(() => {
     return () => {
-      setSound(undefined);
-      void sound?.unloadAsync();
+      if (sound !== undefined) {
+        setSound(undefined);
+        void sound?.unloadAsync();
+      }
     };
   }, [sound]);
 

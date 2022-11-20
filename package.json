@@ -13,8 +13,8 @@
     "build": "tsc --noEmit"
   },
   "dependencies": {
-    "expo": "45.0.8",
-    "expo-av": "11.2.3",
+    "expo": "47.0.6",
+    "expo-av": "13.0.1",
     "expo-splash-screen": "0.15.1",
     "expo-status-bar": "1.3.0",
     "react": "17.0.2",
